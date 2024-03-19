@@ -1,5 +1,5 @@
 🌍 Planit
-Planit is a straightforward and user-friendly calendar application designed to help individuals efficiently manage their daily schedules. With Planit, you can effortlessly add and organize important events throughout your day, ensuring you stay on track and productive.
+ A straightforward and user-friendly calendar application designed to help individuals efficiently manage their daily schedules. With Planit, you can effortlessly add and organize important events throughout your day, ensuring you stay on track and productive.
 
 User Story
 AS AN employee with a busy schedule
@@ -21,6 +21,8 @@ WHEN I refresh the page
 THEN the saved events persist
 Application Demo
 A user clicks on slots on the color-coded calendar and edits the events.
+
+![Planit](site-image-1.jpg)
 
 Overview
 Planit simplifies the process of managing your daily agenda. It offers a clean and intuitive interface where you can seamlessly add, edit, and organize your tasks and appointments. Whether you're a busy professional, a student with a packed schedule, or simply someone who values efficient time management, Planit is here to streamline your day.
