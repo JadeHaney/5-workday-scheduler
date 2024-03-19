@@ -1,13 +1,73 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* Global styles */
 body {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
+/* Header styles */
+header {
+  padding: 5rem 0;
+  text-align: center;
+  position: relative; /* Add relative positioning for rocket container */
+}
+
+.display-3 {
+  display: inline-block;
+  margin-right: 10px;
+  background-image: url('saturn.jpg');
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding-right: 70px;
+}
+
+/* Rocket animation */
+.rocket-container {
+  position: absolute;
+  margin-top: 135px;
+  top: 50%; /* Center the rocket vertically */
+  right: 0; /* Position the rocket on the right side of the logo */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  width: calc(100vw - 70px); /* Adjust width to cover the entire header */
+  height: 100px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.rocket {
+  width: auto; /* Set width to auto to match the width of the image */
+  height: 60px; /* Adjust height as needed */
+  background-image: url('rocket.jpg');
+  background-size: contain; /* Ensure entire image is shown */
+  background-repeat: no-repeat;
+  background-position: center; /* Center the background image */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fly 10s linear infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translateX(100vw); /* Move the rocket to the right side of the screen */
+  }
+}
+
+
+/* Time block styles */
 textarea {
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
+  color: white;
   border-left: 1px solid black;
   padding: 10px;
 }
@@ -31,18 +91,15 @@ textarea {
 }
 
 .past {
-  background-color: rgb(56, 189, 233); /* Purple */
-  color: white;
+  background-color: #7d8081;
 }
 
 .present {
-  background-color: #32cd32; /* Green */
-  color: white;
+  background-color: #2a9e2a;
 }
 
 .future {
-  background-color: rgb(122, 46, 207); /* Blue */
-  color: white;
+  background-color: #5231c9;
 }
 
 .saveBtn {

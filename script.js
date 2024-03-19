@@ -51,4 +51,17 @@ $(document).ready(function() {
     var textAreaContent = $(this).siblings(".description").val();
     localStorage.setItem("timeBlock-" + hour, textAreaContent);
   });
+
+  // Load saved events from local storage
+  function loadSavedEvents() {
+    for (var hour = 9; hour <= 17; hour++) {
+      var savedEvent = localStorage.getItem("timeBlock-" + hour);
+      if (savedEvent) {
+        $("[data-hour='" + hour + "'] .description").val(savedEvent);
+      }
+    }
+  }
+
+  // Call function to load saved events when the page loads
+  loadSavedEvents();
 });
