@@ -1,24 +1,19 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(document).ready(function() {
   // Function to generate time blocks
   function generateTimeBlocks() {
     // Clear existing time blocks
     $("#timeBlocks").empty();
 
-    // Current hour
-    var currentHour = moment().hour();
-
     // Loop through standard business hours (9am to 5pm)
     for (var hour = 9; hour <= 17; hour++) {
       var timeBlock = $("<div>").addClass("row time-block").attr("data-hour", hour);
-      var hourDiv = $("<div>").addClass("col-2 col-md-1 hour text-center py-3").text(moment({ hour: hour }).format("hA"));
+      var hourDiv = $("<div>").addClass("col-2 col-md-1 hour text-center py-3").text(dayjs().hour(hour).format("hA")); // Display specific times using Day.js
       var textArea = $("<textarea>").addClass("col-8 col-md-10 description").attr("rows", 3).val(localStorage.getItem("timeBlock-" + hour));
       var saveBtn = $("<button>").addClass("btn saveBtn col-2 col-md-1").attr("aria-label", "save");
       var saveIcon = $("<i>").addClass("fas fa-save").attr("aria-hidden", "true");
 
       // Add past, present, or future class based on current hour
+      var currentHour = dayjs().hour();
       if (hour < currentHour) {
         timeBlock.addClass("past");
       } else if (hour === currentHour) {
@@ -36,7 +31,7 @@ $(document).ready(function() {
 
   // Function to update current day
   function updateCurrentDay() {
-    var today = moment().format("dddd, MMMM Do YYYY");
+    var today = dayjs().format("dddd, MMMM D, YYYY");
     $("#currentDay").text(today);
   }
 
